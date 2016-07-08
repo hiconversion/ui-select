@@ -176,6 +176,9 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
         if($select.selected.length >= $select.limit) {
           return;
         }
+        if (item === undefined) {
+          return;
+        }
         $select.selected.push(item);
         $selectMultiple.updateModel();
       });
